@@ -20,7 +20,7 @@ body, h1, h2, h3, .list {
 .container {
 	max-width: 1140px;
 	margin: 0 auto;
-	padding: 60px 15px 30 15px
+	padding: 60px 15px 30px 15px
 }
 .row {
 	display: flex;
