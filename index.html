@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+    <!-- Estilo Customizado -->
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <title>Tabela de preços usando JS para alternar valores</title>
+</head>
+<body>
+    <main>
+        <div class="container"><!-- Container -->
+            <h1>Nossos Preços</h1>
+            <div class="selecione">
+                <button type="button" class="btn btn-text">Por ano</button>
+                <button type="button" id="btn-check" onclick="mudar_Periodo();" class="btn btn-check"></button>
+                <button type="button" class="btn btn-text">Por mês</button>
+            </div>
+            <div class="row"><!-- Row -->
+                <div class="card">
+                    <h3>Basico</h3>
+                    <h1>$<span id="v-basico">19.99</span></h1>
+                    <ul class="list">
+                        <li>500 GB de Armazenamento</li>
+                        <li>2 Usuários Permitidos</li>
+                        <li>Envie Até 3 GB</li>
+                    </ul>
+                    <a href="#" class="btn btn-link">Saber mais</a>
+                </div>
+                <div class="card card-center">
+                    <h3>Profissional</h3>
+                    <h1>$<span id="v-pro">24.99</span></h1>
+                    <ul class="list">
+                        <li>1 TB de Armazenamento</li>
+                        <li>5 Usuários Permitidos</li>
+                        <li>Envie Até 10 GB</li>
+                    </ul>
+                    <a href="#" class="btn btn-link btn-link-center">Saber mais</a>
+                </div>
+                <div class="card">
+                    <h3>Mestre</h3>
+                    <h1>$<span id="v-mestre">39.99</span></h1>
+                    <ul class="list">
+                        <li>2 TB de Armazenamento</li>
+                        <li>10 Usuários Permitidos</li>
+                        <li>Envie Até 20 GB</li>
+                    </ul>
+                    <a href="#" class="btn btn-link">Saber mais</a>
+                </div>
+            </div><!--/ Row -->
+        </div><!--/ Container -->
+    </main>
+    <script type="text/javascript">
+        function mudar_Periodo() {
+            var v_basico= document.getElementById('v-basico');
+            var v_pro= document.getElementById('v-pro');
+            var v_mestre= document.getElementById('v-mestre');
+            if (v_basico.innerHTML == "19.99") {
+                v_basico.innerHTML="199.99";
+                v_pro.innerHTML="249.99";
+                v_mestre.innerHTML="399.99";
+                
+                document.getElementById("btn-check").classList.add("btn-check-1");
+            }
+            else {
+                v_basico.innerHTML="19.99";
+                v_pro.innerHTML="24.99";
+                v_mestre.innerHTML="39.99";
+                document.getElementById("btn-check").classList.remove("btn-check-1");
+            }
+        }
+    </script>
+    <footer>
+        <p>
+            Desafio do <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Codificado por <a href="https://github.com/EdivandroLima">Edivandro Lima</a>.
+        </p>
+    </footer>
+</body>
+</html>
